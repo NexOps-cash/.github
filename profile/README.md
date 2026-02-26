@@ -5,6 +5,12 @@
 [![Stack: Bitcoin Cash](https://img.shields.io/badge/Blockchain-Bitcoin%20Cash-green)](https://bitcoincash.org/)
 [![Layer: AI](https://img.shields.io/badge/Layer-AI--Powered-blueviolet)](https://gemini.google.com/)
 
+NexIDE - https://github.com/NexOps-cash/nexops 
+
+NexMCP - https://github.com/NexOps-cash/nexops-mcp
+
+NexKB - https://github.com/NexOps-cash/nexkb
+
 NexOps Protocol is an AI-assisted, security-first infrastructure layer designed to accelerate and harden smart contract development on Bitcoin Cash.
 
 As BCH smart contracts and CashTokens adoption grow, the ecosystem requires stronger guardrails, better auditing, and safer deployment workflows. NexOps provides deterministic enforcement, hybrid security scoring, and developer-grade tooling — ensuring that more contracts can be created without increasing systemic risk.
@@ -55,7 +61,7 @@ One-click publishing of audited contracts, reusable community blueprints, and em
 
 NexOps is built as modular infrastructure designed for long-term ecosystem integration.
 
-### 🖥️ Nexus Workbench
+### 🖥️ NexIDE Workbench
 Developer IDE for generation, auditing, simulation, and deployment.
 
 ### 🧠 NexOps MCP (Intelligence Core)
@@ -88,6 +94,28 @@ It separates:
 - Deployment eligibility  
 
 Ensuring unsafe contracts never reach mainnet.
+
+## 🛡️ Deterministic Rule Set (LNC)
+
+NexOps enforces 15 security-critical structural rules BEFORE compilation:
+
+| ID | Name | Description | Severity |
+|:---|:---|:---|:---|
+| **LNC-001** | Index Guard | Prevents hardcoded `tx.inputs[0]` or unvalidated `tx.outputs[N]`. | CRITICAL |
+| **LNC-002** | Unused Vars | Heuristic detection of variables declared but never read. | LOW |
+| **LNC-003** | Value Anchor | Ensures funds are anchored to inputs (Sum Invariants). | CRITICAL |
+| **LNC-004** | Scope Check | Prevents indexing `tx.outputs` outside of function bodies. | HIGH |
+| **LNC-005** | Fee Arithmetic | Forbids implicit fee subtraction (e.g., `value - fee`). | HIGH |
+| **LNC-006** | Field Update | Replaces deprecated Solidity-isms like `.lockingBytecode`. | INFO |
+| **LNC-007** | Version Guard | Catches CashScript 0.12.x patterns incompatible with ^0.13.0. | HIGH |
+| **LNC-008** | Self-Anchor | Forces covenants to perpetuate state via `this.activeBytecode`. | CRITICAL |
+| **LNC-009** | Syntax Filter | Forbids non-functional constructs (Ternary, Loops, If/Else). | HIGH |
+| **LNC-010** | Timelock | Enforces standalone `require(tx.time >= X)` patterns. | HIGH |
+| **LNC-011** | Div Guard | Protects against Division by Zero with mandatory `> 0` checks. | CRITICAL |
+| **LNC-012** | Frozen State | Warns when a stateful contract lacks mutation logic. | WARNING |
+| **LNC-013** | Mint Guard | Enforces Auth pubkey checks for token-minting functions. | HIGH |
+| **LNC-014** | Token Pair | Ensures Category and Amount are validated together. | CRITICAL |
+| **LNC-015** | Constructor | Validates P2PKH/P2SH constructor argument types. | CRITICAL |
 
 ---
 
