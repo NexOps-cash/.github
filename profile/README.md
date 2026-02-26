@@ -136,13 +136,70 @@ As more developers build on BCH, NexOps acts as a safety multiplier rather than 
 ---
 
 ## 🗺️ Roadmap (Ecosystem Expansion)
+NexOps is evolving from a secure contract generation tool into shared infrastructure for safe smart contract deployment on Bitcoin Cash.
 
-- [ ] NexMCP SDK for external integration  
-- [ ] Cross-contract composition support  
-- [ ] Expanded covenant pattern library  
-- [ ] Advanced risk-tier categorization  
-- [ ] CI/CD validation API for protocol teams  
+---
 
+### 🔌 NexMCP SDK
+Public endpoints:
+- `/generate`
+- `/audit`
+- `/repair`
+
+Enables:
+- Wallet integration for pre-signature safety scoring
+- DAO tooling integration
+- CI/CD contract validation pipelines
+- Third-party dApp embedding of NexOps intelligence
+
+---
+
+### 🔗 WalletConnect Expansion
+- Broader wallet compatibility
+- Persistent session handling
+- Multi-account support
+- Improved mobile signing UX
+
+---
+
+### 🧠 Expanded Contract Coverage
+- Larger production-grade contract pattern library
+- Advanced timelock synthesis improvements
+- Expanded CashToken covenant templates
+- Multi-function contract scaffolding
+
+---
+
+### 🛡️ Audit Engine v2
+- Cross-function spend path validation
+- Improved deadlock & fund-lock detection
+- Bytecode efficiency insights
+- Formalized risk tiers (Low / Medium / High / Critical)
+- Customizable deployment policy thresholds
+
+---
+
+### 🧭 Advanced Debugging Tools
+- Step-through execution simulator with stack visualization
+- Enhanced execution tracing for complex covenant flows
+- Improved semantic explanation of failure paths
+
+---
+
+### 🧩 Governance & DAO Toolkit
+- Weighted voting modules
+- Treasury execution templates
+- Proposal lifecycle scaffolding
+- Guardian-based recovery templates
+
+---
+
+### ☁️ NexOps Cloud API
+Expose Generator + Auditor logic as a service so BCH wallets and platforms can display contract safety scores before user confirmation.
+
+---
+
+NexOps aims to become the default safety layer for BCH smart contract development — increasing deployment velocity while reducing irreversible on-chain mistakes.
 ---
 
 ## 🤝 Open Collaboration
