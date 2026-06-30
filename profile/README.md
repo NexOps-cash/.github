@@ -1,247 +1,183 @@
-# 🌌 NexOps Protocol  
-### *The Security & Intelligence Infrastructure Layer for Bitcoin Cash Smart Contracts*
+# 🌌 NexOps Protocol
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Stack: Bitcoin Cash](https://img.shields.io/badge/Blockchain-Bitcoin%20Cash-green)](https://bitcoincash.org/)
-[![Layer: AI](https://img.shields.io/badge/Layer-AI--Powered-blueviolet)](https://gemini.google.com/)
-
-NexIDE - https://github.com/NexOps-cash/nexops 
-
-NexMCP - https://github.com/NexOps-cash/nexops-mcp
-
-NexKB - https://github.com/NexOps-cash/nexkb
-
-NexOps Protocol is an AI-assisted, security-first infrastructure layer designed to accelerate and harden smart contract development on Bitcoin Cash.
-
-As BCH smart contracts and CashTokens adoption grow, the ecosystem requires stronger guardrails, better auditing, and safer deployment workflows. NexOps provides deterministic enforcement, hybrid security scoring, and developer-grade tooling — ensuring that more contracts can be created without increasing systemic risk.
-
----
-
-## 🌍 Why NexOps Matters for the BCH Ecosystem
-
-Bitcoin Cash enables expressive UTXO-based smart contracts through CashScript and covenants — but:
-
-- Small logic errors can permanently lock funds  
-- Authority misconfiguration can inflate tokens  
-- UTXO reasoning is difficult for new developers  
-- Auditing requires deep VM expertise  
-- Growth in visual/AI tools increases deployment risk  
-
-NexOps reduces these risks while increasing contract velocity.
-
-> More contracts deployed.  
-> Fewer contracts broken.  
-> Higher trust in BCH DeFi infrastructure.
-
----
-
-## 🚀 Ecosystem-Oriented Capabilities
-
-### 🧠 Guarded AI Contract Generation  
-Converts natural language intent into structured, readable CashScript — enforced through a deterministic multi-phase synthesis pipeline.
-
-### 🛡️ Hybrid Security Scoring (70/30 Model)  
-Combines structural rule enforcement (0–70) with semantic business logic evaluation (0–30), producing a transparent security score before deployment.
-
-### ⚙️ Deterministic Deployment Guardrails  
-Typed constructor validation, secp256k1 checks, and real-time contract address derivation before funding.
-
-### 🧭 Contract Visual Flow Engine  
-Auto-generated spend-path diagrams and AI contract explanations to improve transparency and onboarding.
-
-### 🔗 Unified On-Chain Operations  
-WalletConnect v2 integration, UTXO monitoring, advanced transaction builder, and real-time Electrum synchronization.
-
-### 🏛️ Verified Global Registry  
-One-click publishing of audited contracts, reusable community blueprints, and embedded security reports — promoting composability and shared trust.
-
----
-
-## 🏗️ Ecosystem Architecture
-
-NexOps is built as modular infrastructure designed for long-term ecosystem integration.
-
-### 🖥️ NexIDE Workbench
-Developer IDE for generation, auditing, simulation, and deployment.
-
-### 🧠 NexOps MCP (Intelligence Core)
-Centralized guarded synthesis and security enforcement engine.
-
-### 🔌 Future NexMCP SDK
-Public endpoints:
-- `/generate`
-- `/audit`
-- `/repair`
-
-Enabling:
-- Wallet integration  
-- DAO tooling integration  
-- CI/CD contract validation  
-- Third-party dApp embedding  
-
-NexOps is not just a UI — it is becoming programmable infrastructure.
-
----
-
-# 🧠 NexOps MCP  
-### *Deterministic Intelligence for Secure BCH Covenants*
-
-NexOps MCP is the authoritative enforcement layer of the ecosystem.
-
-It separates:
-- Structural correctness  
-- Business logic safety  
-- Deployment eligibility  
-
-Ensuring unsafe contracts never reach mainnet.
-
-## 🛡️ Deterministic Rule Set (LNC)
-
-NexOps enforces 15 security-critical structural rules BEFORE compilation:
-
-| ID | Name | Description | Severity |
-|:---|:---|:---|:---|
-| **LNC-001** | Index Guard | Prevents hardcoded `tx.inputs[0]` or unvalidated `tx.outputs[N]`. | CRITICAL |
-| **LNC-002** | Unused Vars | Heuristic detection of variables declared but never read. | LOW |
-| **LNC-003** | Value Anchor | Ensures funds are anchored to inputs (Sum Invariants). | CRITICAL |
-| **LNC-004** | Scope Check | Prevents indexing `tx.outputs` outside of function bodies. | HIGH |
-| **LNC-005** | Fee Arithmetic | Forbids implicit fee subtraction (e.g., `value - fee`). | HIGH |
-| **LNC-006** | Field Update | Replaces deprecated Solidity-isms like `.lockingBytecode`. | INFO |
-| **LNC-007** | Version Guard | Catches CashScript 0.12.x patterns incompatible with ^0.13.0. | HIGH |
-| **LNC-008** | Self-Anchor | Forces covenants to perpetuate state via `this.activeBytecode`. | CRITICAL |
-| **LNC-009** | Syntax Filter | Forbids non-functional constructs (Ternary, Loops, If/Else). | HIGH |
-| **LNC-010** | Timelock | Enforces standalone `require(tx.time >= X)` patterns. | HIGH |
-| **LNC-011** | Div Guard | Protects against Division by Zero with mandatory `> 0` checks. | CRITICAL |
-| **LNC-012** | Frozen State | Warns when a stateful contract lacks mutation logic. | WARNING |
-| **LNC-013** | Mint Guard | Enforces Auth pubkey checks for token-minting functions. | HIGH |
-| **LNC-014** | Token Pair | Ensures Category and Amount are validated together. | CRITICAL |
-| **LNC-015** | Constructor | Validates P2PKH/P2SH constructor argument types. | CRITICAL |
-
----
-
-## 🔐 Hybrid Security Model
-
-### Deterministic Layer (0–70)
-- 15 enforced LNC structural invariants  
-- Sum preservation  
-- Mint authority validation  
-- Token category + amount checks  
-- Division-by-zero protection  
-- Timelock normalization  
-
-### Semantic Layer (0–30)
-- Business logic fairness  
-- Deadlock detection  
-- Incentive alignment review  
-- Risk tier classification  
-
-### 🚦 Deployment Gate
-
-Contracts must satisfy:
-
-
-Deterministic Score ≥ 50
-AND
-Total Score ≥ 75
-
-
-This ensures BCH mainnet exposure is risk-filtered.
-
----
-
-## 📊 Impact on BCH Growth
-
-NexOps improves:
-
-- Developer onboarding  
-- Contract safety transparency  
-- Reusable audited patterns  
-- Confidence in CashToken-based systems  
-- Speed of DeFi experimentation  
-
-As more developers build on BCH, NexOps acts as a safety multiplier rather than a risk amplifier.
-
----
-
-## 🗺️ Roadmap (Ecosystem Expansion)
-NexOps is evolving from a secure contract generation tool into shared infrastructure for safe smart contract deployment on Bitcoin Cash.
-
----
-
-### 🔌 NexMCP SDK
-Public endpoints:
-- `/generate`
-- `/audit`
-- `/repair`
-
-Enables:
-- Wallet integration for pre-signature safety scoring
-- DAO tooling integration
-- CI/CD contract validation pipelines
-- Third-party dApp embedding of NexOps intelligence
-
----
-
-### 🔗 WalletConnect Expansion
-- Broader wallet compatibility
-- Persistent session handling
-- Multi-account support
-- Improved mobile signing UX
-
----
-
-### 🧠 Expanded Contract Coverage
-- Larger production-grade contract pattern library
-- Advanced timelock synthesis improvements
-- Expanded CashToken covenant templates
-- Multi-function contract scaffolding
-
----
-
-### 🛡️ Audit Engine v2
-- Cross-function spend path validation
-- Improved deadlock & fund-lock detection
-- Bytecode efficiency insights
-- Formalized risk tiers (Low / Medium / High / Critical)
-- Customizable deployment policy thresholds
-
----
-
-### 🧭 Advanced Debugging Tools
-- Step-through execution simulator with stack visualization
-- Enhanced execution tracing for complex covenant flows
-- Improved semantic explanation of failure paths
-
----
-
-### 🧩 Governance & DAO Toolkit
-- Weighted voting modules
-- Treasury execution templates
-- Proposal lifecycle scaffolding
-- Guardian-based recovery templates
-
----
-
-### ☁️ NexOps Cloud API
-Expose Generator + Auditor logic as a service so BCH wallets and platforms can display contract safety scores before user confirmation.
-
----
-
-NexOps aims to become the default safety layer for BCH smart contract development — increasing deployment velocity while reducing irreversible on-chain mistakes.
----
-
-## 🤝 Open Collaboration
-
-We welcome:
-- BCH protocol contributors  
-- CashScript developers  
-- Security researchers  
-- DeFi builders  
-
-NexOps aims to become shared infrastructure — not a closed tool.
-
----
+### Building trustworthy AI-assisted smart contract infrastructure for Bitcoin Cash.
 
 <p align="center">
-  Building safer smart contract infrastructure for the Bitcoin Cash ecosystem.
+
+[![BCH-1 Hackcelerator](https://img.shields.io/badge/BCH--1%20Hackcelerator-🏆%20Overall%20Winner-success?style=for-the-badge)]()
+[![Bitcoin Cash](https://img.shields.io/badge/Blockchain-Bitcoin%20Cash-green?style=for-the-badge)](https://bitcoincash.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+
 </p>
+
+---
+
+## The Problem
+
+Large language models are becoming increasingly capable of writing software.
+
+Smart contracts are no exception.
+
+Today, AI can generate contracts that compile, look convincing, and even pass basic checks. Yet they may still contain subtle vulnerabilities capable of permanently locking funds, inflating tokens, or introducing unintended spending paths.
+
+On an irreversible blockchain, those mistakes are permanent.
+
+The challenge is no longer:
+
+> **"Can AI generate smart contracts?"**
+
+The challenge is:
+
+> **"When should developers actually trust AI-generated smart contracts?"**
+
+NexOps was built around that question.
+
+---
+
+# Why NexOps Exists
+
+When we first started experimenting with AI-assisted CashScript generation, we believed the biggest limitation was training data.
+
+CashScript is a relatively small language compared to Solidity, so language models often generated contracts that wouldn't even compile.
+
+As prompting, retrieval, compiler feedback, and repair loops improved, something unexpected happened.
+
+The contracts started compiling.
+
+But compiling wasn't enough.
+
+Many contracts still misunderstood spending paths, token ownership, or covenant behavior. They appeared correct while quietly introducing subtle security risks.
+
+That completely changed our direction.
+
+Instead of trying to build an AI that never makes mistakes, NexOps assumes AI **will** make mistakes—and surrounds it with infrastructure designed to detect, explain, and repair them before deployment.
+
+Generation is only one step.
+
+Trust is the real product.
+
+---
+
+# What is NexOps?
+
+NexOps is an AI-assisted developer infrastructure platform for Bitcoin Cash smart contracts.
+
+Instead of relying on a single language model response, NexOps combines multiple layers of validation before a contract reaches deployment.
+
+These layers include:
+
+- AI-assisted contract generation
+- Deterministic structural analysis
+- Security rule enforcement
+- Semantic reasoning
+- Automated repair
+- Continuous benchmarking
+- Deployment guardrails
+
+Together, they help developers move faster **without lowering security standards.**
+
+---
+
+# Repository Structure
+
+This organization contains several independent components that work together.
+
+| Project | Purpose |
+|---------|----------|
+| **NexIDE** | AI-assisted development environment for generating, auditing and deploying CashScript contracts |
+| **NexOps MCP** | Core intelligence engine responsible for guarded generation, auditing and repair |
+| **NexKB** | Structured knowledge base containing contract patterns, documentation and benchmark data |
+
+Repositories
+
+- 🔹 NexIDE  
+  https://github.com/NexOps-cash/nexops
+
+- 🔹 NexOps MCP  
+  https://github.com/NexOps-cash/nexops-mcp
+
+- 🔹 NexKB  
+  https://github.com/NexOps-cash/nexkb
+
+---
+
+# Design Philosophy
+
+NexOps is built around one principle.
+
+> **AI should propose. Infrastructure should decide.**
+
+Language models are excellent at generating possibilities.
+
+Infrastructure is responsible for determining whether those possibilities are safe enough to deploy.
+
+Instead of replacing deterministic engineering with AI, NexOps combines both.
+
+Each layer compensates for the weaknesses of the others.
+
+The result is a development workflow that is both faster and substantially more trustworthy than prompting alone.
+
+---
+
+# Core Capabilities
+
+## 🤖 AI-assisted Contract Generation
+
+Generate CashScript contracts directly from natural language requirements.
+
+Rather than exposing raw LLM output to developers, generation is guided through structured prompts, protocol knowledge, compiler feedback, and iterative refinement.
+
+---
+
+## 🛡 Security Analysis
+
+Every generated contract passes through deterministic security analysis before semantic evaluation begins.
+
+This detects structural issues that language models frequently overlook.
+
+Examples include:
+
+- Missing output binding
+- Authority validation
+- Token category consistency
+- Value preservation
+- Timelock enforcement
+- Constructor validation
+- Dangerous language patterns
+
+---
+
+## 🧠 Semantic Review
+
+Structural correctness does not guarantee logical correctness.
+
+NexOps therefore performs an additional semantic evaluation that compares contract behavior against the developer's original intent.
+
+Questions include:
+
+- Does the contract enforce the intended spending rules?
+- Could funds become permanently locked?
+- Can an attacker bypass expected conditions?
+- Does token behavior match the requested design?
+
+---
+
+## 🔄 Automated Repair
+
+Rather than stopping after detecting issues, NexOps attempts to repair them.
+
+Generation → Analysis → Repair forms a continuous feedback loop until deployment requirements are satisfied.
+
+Developers remain in control throughout the process.
+
+---
+
+## 📊 Benchmarking
+
+Every improvement to NexOps is measured.
+
+Changes are continuously evaluated across representative BCH contract patterns to ensure progress is genuine rather than anecdotal.
+
+The goal is not simply better generations.
+
+The goal is measurable improvements in correctness, security and developer trust.
